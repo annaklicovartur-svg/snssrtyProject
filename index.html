@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>СТО Premium</title>
+<title>Мебель на заказ — Studio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,40 +16,94 @@
 }
 
 body{
-    background:#070707;
-    color:white;
-    font-family:'Inter',sans-serif;
+    font-family:Manrope,sans-serif;
+    background:#0b0b0b;
+    color:#fff;
     overflow-x:hidden;
 }
 
-/* Бегущая строка */
+/* ================= HERO ================= */
 
-.marquee-wrapper{
-    width:100%;
-    overflow:hidden;
-    border-bottom:1px solid rgba(255,255,255,.08);
-    background:rgba(255,255,255,.03);
-    backdrop-filter:blur(20px);
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+    background:url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
+    position:relative;
 }
 
-.marquee-wrapper {
-    margin-top: 40px;
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
 }
+
+.hero-content{
+    position:relative;
+    max-width:750px;
+    z-index:2;
+    animation:fadeUp 1.2s ease;
+}
+
+.hero span{
+    color:#c49a6c;
+    letter-spacing:4px;
+    font-size:13px;
+}
+
+.hero h1{
+    font-size:82px;
+    line-height:1;
+    margin:20px 0;
+}
+
+.hero p{
+    color:#b5b5b5;
+    max-width:520px;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:16px 34px;
+    background:#c49a6c;
+    border-radius:999px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* ================= MARQUEE FIX ================= */
 
 .marquee{
-    display:flex;
-    width:max-content;
-    animation:scroll 20s linear infinite;
+    width:100%;
+    overflow:hidden;
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    padding:18px 0;
 }
 
-.marquee span{
-    padding:20px 40px;
-    font-size:14px;
-    font-weight:800;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:#ff5b00;
+.marquee-track{
+    display:flex;
+    width:max-content;
+    animation:scroll 16s linear infinite;
+}
+
+.marquee-group{
+    display:flex;
+    gap:60px;
     white-space:nowrap;
+    font-size:20px;
+    color:#888;
+    letter-spacing:2px;
+    padding-right:60px;
 }
 
 @keyframes scroll{
@@ -61,208 +115,278 @@ body{
     }
 }
 
-/* Hero */
+/* ================= SECTIONS ================= */
 
-.hero{
-    min-height:calc(100vh - 60px);
+section{
+    padding:140px 8%;
+}
+
+/* ================= SHOWCASE ================= */
+
+.showcase{
     display:flex;
-    justify-content:center;
+    gap:60px;
     align-items:center;
-    position:relative;
-    overflow:hidden;
 }
 
-.hero::before{
-    content:"";
-    position:absolute;
-    width:700px;
-    height:700px;
-    background:#ff5b00;
-    filter:blur(250px);
-    opacity:.12;
-    top:-250px;
-    right:-250px;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    width:600px;
-    height:600px;
-    background:#ff5b00;
-    filter:blur(250px);
-    opacity:.08;
-    bottom:-300px;
-    left:-200px;
-}
-
-.container{
-    width:90%;
-    max-width:1300px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:80px;
-    z-index:2;
-}
-
-.left{
+.showcase-text{
     flex:1;
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
 }
 
-.badge{
-    display:inline-block;
-    padding:12px 20px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,.1);
-    margin-bottom:25px;
+.showcase-text h2{
+    font-size:60px;
+    line-height:1.1;
 }
 
-h1{
-    font-size:72px;
-    line-height:1;
-    font-weight:900;
-    margin-bottom:25px;
+.showcase-text p{
+    margin-top:20px;
+    color:#aaa;
+    line-height:1.8;
 }
 
-.orange{
-    color:#ff5b00;
-}
-
-.subtitle{
-    color:#a5a5a5;
-    font-size:20px;
-    line-height:1.7;
-    max-width:600px;
-    margin-bottom:35px;
-}
-
-.buttons{
-    display:flex;
-    gap:15px;
-}
-
-.btn{
-    padding:18px 35px;
-    border-radius:14px;
-    text-decoration:none;
-    font-weight:700;
-    transition:.3s;
-}
-
-.primary{
-    background:#ff5b00;
-    color:white;
-    box-shadow:0 0 40px rgba(255,91,0,.4);
-}
-
-.primary:hover{
-    transform:translateY(-5px);
-}
-
-.secondary{
-    border:1px solid rgba(255,255,255,.15);
-    color:white;
-}
-
-.secondary:hover{
-    background:rgba(255,255,255,.05);
-}
-
-.right{
+.showcase-media{
     flex:1;
-}
-
-.right img{
-    width:100%;
+    height:520px;
     border-radius:30px;
-    animation:float 4s ease-in-out infinite;
+    overflow:hidden;
+    transform:scale(.95);
+    transition:1s;
 }
 
-@keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-15px);
-    }
+.showcase-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s;
 }
 
-@media(max-width:1000px){
+.showcase-media:hover img{
+    transform:scale(1.1);
+}
 
-.container{
-    flex-direction:column;
+/* ================= CARDS ================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    height:320px;
+    border-radius:25px;
+    overflow:hidden;
+    position:relative;
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s;
+}
+
+.card:hover img{
+    transform:scale(1.1);
+    filter:brightness(.8);
+}
+
+.card h3{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+}
+
+/* ================= HORIZONTAL ================= */
+
+.horizontal{
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+}
+
+.horizontal::-webkit-scrollbar{
+    display:none;
+}
+
+.slide{
+    min-width:75%;
+    height:520px;
+    border-radius:30px;
+    overflow:hidden;
+    scroll-snap-align:center;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s;
+}
+
+.slide:hover img{
+    transform:scale(1.05);
+}
+
+/* ================= STATS ================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
     text-align:center;
+    gap:20px;
 }
 
-h1{
-    font-size:48px;
+.stats h3{
+    font-size:64px;
+    color:#c49a6c;
 }
 
-.buttons{
-    justify-content:center;
+/* ================= CTA ================= */
+
+.cta{
+    text-align:center;
+    padding:180px 8%;
 }
 
+.cta h2{
+    font-size:60px;
+    max-width:800px;
+    margin:auto;
+}
+
+/* ================= ANIMATION ================= */
+
+.show{
+    opacity:1 !important;
+    transform:translateY(0) !important;
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(50px)}
+    to{opacity:1;transform:translateY(0)}
 }
 
 </style>
 </head>
+
 <body>
 
-<div class="marquee-wrapper">
-    <div class="marquee">
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <span>FURNITURE STUDIO</span>
+        <h1>Мебель, созданная под пространство</h1>
+        <p>Премиальные кухни, шкафы и интерьеры под ключ.</p>
+        <a href="#" class="btn">Начать проект</a>
+    </div>
+</section>
 
-        <span>НЕ ПРОСТО РЕМОНТ • ВОЗВРАЩАЕМ УВЕРЕННОСТЬ ЗА РУЛЁМ</span>
-        <span>ДИАГНОСТИКА • РЕМОНТ • ОБСЛУЖИВАНИЕ • ГАРАНТИЯ</span>
-        <span>КАЖДЫЙ АВТОМОБИЛЬ ЗАСЛУЖИВАЕТ СЕРВИСА ПРЕМИУМ-КЛАССА</span>
-        <span>98% КЛИЕНТОВ ВОЗВРАЩАЮТСЯ СНОВА</span>
+<!-- MARQUEE -->
+<div class="marquee">
+    <div class="marquee-track">
+        <div class="marquee-group">
+            КУХНИ • ШКАФЫ • ДИЗАЙН • ИНТЕРЬЕР •
+            КУХНИ • ШКАФЫ • ДИЗАЙН • ИНТЕРЬЕР •
+            КУХНИ • ШКАФЫ • ДИЗАЙН • ИНТЕРЬЕР •
+        </div>
 
-        <span>НЕ ПРОСТО РЕМОНТ • ВОЗВРАЩАЕМ УВЕРЕННОСТЬ ЗА РУЛЁМ</span>
-        <span>ДИАГНОСТИКА • РЕМОНТ • ОБСЛУЖИВАНИЕ • ГАРАНТИЯ</span>
-        <span>КАЖДЫЙ АВТОМОБИЛЬ ЗАСЛУЖИВАЕТ СЕРВИСА ПРЕМИУМ-КЛАССА</span>
-        <span>98% КЛИЕНТОВ ВОЗВРАЩАЮТСЯ СНОВА</span>
-
+        <div class="marquee-group">
+            КУХНИ • ШКАФЫ • ДИЗАЙН • ИНТЕРЬЕР •
+            КУХНИ • ШКАФЫ • ДИЗАЙН • ИНТЕРЬЕР •
+            КУХНИ • ШКАФЫ • ДИЗАЙН • ИНТЕРЬЕР •
+        </div>
     </div>
 </div>
 
-<section class="hero">
+<!-- SHOWCASE -->
+<section>
+    <div class="showcase">
+        <div class="showcase-text reveal">
+            <h2>Минимализм и функциональность</h2>
+            <p>Каждый проект создаётся под ваш интерьер и образ жизни.</p>
+        </div>
 
-<div class="container">
-
-<div class="left">
-
-<div class="badge">
-Премиальное СТО
-</div>
-
-<h1>
-Ваш автомобиль —
-<span class="orange">в надежных руках</span>
-</h1>
-
-<p class="subtitle">
-Комплексная диагностика, ремонт двигателя,
-ходовой части и техническое обслуживание любых марок автомобилей с гарантией качества.
-</p>
-
-<div class="buttons">
-<a href="#" class="btn primary">Записаться</a>
-<a href="#" class="btn secondary">Узнать стоимость</a>
-</div>
-
-</div>
-
-<div class="right">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200" alt="">
-</div>
-
-</div>
-
+        <div class="showcase-media reveal">
+            <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1600&q=80">
+        </div>
+    </div>
 </section>
 
+<!-- CARDS -->
+<section>
+    <div class="cards">
+
+        <div class="card reveal">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1400&q=80">
+            <h3>Кухни</h3>
+        </div>
+
+        <div class="card reveal">
+            <img src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&w=1400&q=80">
+            <h3>Шкафы</h3>
+        </div>
+
+        <div class="card reveal">
+            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1400&q=80">
+            <h3>Гардеробные</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- HORIZONTAL -->
+<section>
+    <div class="horizontal">
+
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80">
+        </div>
+
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1600&q=80">
+        </div>
+
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+    <div><h3>150+</h3><p>Projects</p></div>
+    <div><h3>7</h3><p>Years</p></div>
+    <div><h3>98%</h3><p>Happy clients</p></div>
+    <div><h3>Premium</h3><p>Quality</p></div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Создадим мебель для вашего пространства</h2>
+    <a class="btn" href="#">Оставить заявку</a>
+</section>
+
+<script>
+
+// reveal animation
+const els = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add('show');
+        }
+    });
+},{threshold:0.15});
+
+els.forEach(el=>observer.observe(el));
+
+</script>
+
 </body>
-</html>
-
-
-
-
+</html> 
