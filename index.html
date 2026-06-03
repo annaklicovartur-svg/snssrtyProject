@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>СТО Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#070707;
+    color:white;
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
+
+/* Бегущая строка */
+
+.marquee-wrapper{
+    width:100%;
+    overflow:hidden;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.03);
+    backdrop-filter:blur(20px);
+}
+
+.marquee-wrapper {
+    margin-top: 40px;
+}
+
+.marquee{
+    display:flex;
+    width:max-content;
+    animation:scroll 20s linear infinite;
+}
+
+.marquee span{
+    padding:20px 40px;
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#ff5b00;
+    white-space:nowrap;
+}
+
+@keyframes scroll{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* Hero */
+
+.hero{
+    min-height:calc(100vh - 60px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:#ff5b00;
+    filter:blur(250px);
+    opacity:.12;
+    top:-250px;
+    right:-250px;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:#ff5b00;
+    filter:blur(250px);
+    opacity:.08;
+    bottom:-300px;
+    left:-200px;
+}
+
+.container{
+    width:90%;
+    max-width:1300px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:80px;
+    z-index:2;
+}
+
+.left{
+    flex:1;
+}
+
+.badge{
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.1);
+    margin-bottom:25px;
+}
+
+h1{
+    font-size:72px;
+    line-height:1;
+    font-weight:900;
+    margin-bottom:25px;
+}
+
+.orange{
+    color:#ff5b00;
+}
+
+.subtitle{
+    color:#a5a5a5;
+    font-size:20px;
+    line-height:1.7;
+    max-width:600px;
+    margin-bottom:35px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+}
+
+.btn{
+    padding:18px 35px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.primary{
+    background:#ff5b00;
+    color:white;
+    box-shadow:0 0 40px rgba(255,91,0,.4);
+}
+
+.primary:hover{
+    transform:translateY(-5px);
+}
+
+.secondary{
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+}
+
+.secondary:hover{
+    background:rgba(255,255,255,.05);
+}
+
+.right{
+    flex:1;
+}
+
+.right img{
+    width:100%;
+    border-radius:30px;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+@media(max-width:1000px){
+
+.container{
+    flex-direction:column;
+    text-align:center;
+}
+
+h1{
+    font-size:48px;
+}
+
+.buttons{
+    justify-content:center;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="marquee-wrapper">
+    <div class="marquee">
+
+        <span>НЕ ПРОСТО РЕМОНТ • ВОЗВРАЩАЕМ УВЕРЕННОСТЬ ЗА РУЛЁМ</span>
+        <span>ДИАГНОСТИКА • РЕМОНТ • ОБСЛУЖИВАНИЕ • ГАРАНТИЯ</span>
+        <span>КАЖДЫЙ АВТОМОБИЛЬ ЗАСЛУЖИВАЕТ СЕРВИСА ПРЕМИУМ-КЛАССА</span>
+        <span>98% КЛИЕНТОВ ВОЗВРАЩАЮТСЯ СНОВА</span>
+
+        <span>НЕ ПРОСТО РЕМОНТ • ВОЗВРАЩАЕМ УВЕРЕННОСТЬ ЗА РУЛЁМ</span>
+        <span>ДИАГНОСТИКА • РЕМОНТ • ОБСЛУЖИВАНИЕ • ГАРАНТИЯ</span>
+        <span>КАЖДЫЙ АВТОМОБИЛЬ ЗАСЛУЖИВАЕТ СЕРВИСА ПРЕМИУМ-КЛАССА</span>
+        <span>98% КЛИЕНТОВ ВОЗВРАЩАЮТСЯ СНОВА</span>
+
+    </div>
+</div>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="left">
+
+<div class="badge">
+Премиальное СТО
+</div>
+
+<h1>
+Ваш автомобиль —
+<span class="orange">в надежных руках</span>
+</h1>
+
+<p class="subtitle">
+Комплексная диагностика, ремонт двигателя,
+ходовой части и техническое обслуживание любых марок автомобилей с гарантией качества.
+</p>
+
+<div class="buttons">
+<a href="#" class="btn primary">Записаться</a>
+<a href="#" class="btn secondary">Узнать стоимость</a>
+</div>
+
+</div>
+
+<div class="right">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200" alt="">
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
